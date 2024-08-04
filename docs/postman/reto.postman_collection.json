@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "21b9a1ed-2899-4e03-a5bd-f4d6fcb2162c",
+		"name": "reto",
+		"description": "Plaza de comidas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37158407"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "crear cuenta al propietario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE2ODgyNTQ0MTIsImV4cCI6MTY5MDg0NjQxMiwicm9sIjpbIlJPTEVfQURNSU5JU1RSQURPUiJdfQ.j9mGOKWr-1seTWH097LLTaPuI12O_JVctOQCFhYClEg"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Jose\",\r\n    \"lastName\" : \"Martinez\",\r\n    \"identificationDocument\" : 1189354923,\r\n    \"cellPhone\" : \"+573116798102\",\r\n    \"email\" : \"owner@owner.com\",\r\n    \"password\" : \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8090/user-micro/user/owner"
+					},
+					"response": []
+				}
+			],
+			"description": "Administrador del software de la plaza de comidas."
+		},
+		{
+			"name": "owner",
+			"item": [
+				{
+					"name": "crear cuenta del empleado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvd25lckBvd25lci5jb20iLCJpYXQiOjE2ODgyNTU0NDIsImV4cCI6MTY5MDg0NzQ0MiwibGFzdE5hbWUiOiJNYXJ0aW5leiIsIm5hbWUiOiJKb3NlIiwicm9sIjpbIlJPTEVfUFJPUElFVEFSSU8iXX0._DIK3Y0yvyji4_6AytSbdc3fjjVfK9UL1I9DgOHsN5U"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Jose\",\r\n    \"lastName\" : \"Jimenez\",\r\n    \"identificationDocument\" : 111047623453,\r\n    \"cellPhone\" : \"3172383224\",\r\n    \"email\" : \"employee@employee.com\",\r\n    \"password\" : \"123\",\r\n    \"idRol\" : 3,\r\n    \"idRestaurant\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8090/user-micro/user/employee"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "crear cuenta cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Cuenta Primaria\",\r\n    \"lastName\" : \"Martinez\",\r\n    \"identificationDocument\" : 1090378874,\r\n    \"cellPhone\" : \"3013986322\",\r\n    \"email\" : \"cliente@cliente.com\",\r\n    \"password\" : \"123\",\r\n    \"idRol\" : 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8090/user-micro/user/customer"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"cliente@cliente.com\",\r\n    \"password\" : \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8090/user-micro/auth/login"
+			},
+			"response": []
+		}
+	]
+}
