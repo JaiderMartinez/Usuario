@@ -1,0 +1,23 @@
+services:
+  mysql-user:
+    container_name: food-court-mysql
+    image: mysql:8.4.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: "db_user"
+    networks:
+      - default
+    volumes:
+      - "db-data:/var/lib/mysql"
+      - "./src/main/resources/data.sql:/docker-entrypoint-initdb.d/data.sql"
+
+networks:
+  default:
+    name: "food-court-network"
+
+volumes:
+  db-data:
+    name: "food-court-db-data"

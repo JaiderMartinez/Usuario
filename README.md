@@ -117,4 +117,13 @@ LastName: Apellido del usuario autenticado.
     <li>Url para crear usuario con rol de empleado: <strong>localhost:8090/user-micro/user/employee</strong> tener en cuenta que para crear esta cuenta necesito haberme autenticado y tener el rol de PROPIETARIO e ingresar el token en el header</li>
 </ul>
 
+### Usuario admin Default
+Dentro de la coleccion seleccionar la peticion login e ingresar estos valores en el body
+```json
+    {
+    "email" : "admin@admin.co",
+    "password" : "12345"
+    }
+```
+
 ## Siguiente Microservicio <a href="https://github.com/JaiderMartinez/power_up_v2_plazoleta.git">Plazoleta</a>
